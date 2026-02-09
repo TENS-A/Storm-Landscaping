@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Lato:wght@400;500;700&display=swap');
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -43,39 +45,40 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
+  /* Sculptural Minimalism: Warm ochre accents with monochromatic base */
+  --primary: oklch(0.5 0.15 45); /* Warm ochre/sienna */
+  --primary-foreground: oklch(1 0 0); /* White */
+  --sidebar-primary: oklch(0.5 0.15 45);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --chart-1: oklch(0.5 0.15 45);
+  --chart-2: oklch(0.4 0.12 40);
+  --chart-3: oklch(0.6 0.15 50);
+  --chart-4: oklch(0.45 0.14 42);
+  --chart-5: oklch(0.35 0.10 35);
+  --radius: 0.5rem;
+  --background: oklch(1 0 0); /* Pure white */
+  --foreground: oklch(0.15 0.01 0); /* Near black */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
+  --card-foreground: oklch(0.15 0.01 0);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --popover-foreground: oklch(0.15 0.01 0);
+  --secondary: oklch(0.95 0.002 0); /* Light gray */
+  --secondary-foreground: oklch(0.2 0.01 0);
+  --muted: oklch(0.85 0.003 0); /* Medium gray */
+  --muted-foreground: oklch(0.4 0.01 0);
+  --accent: oklch(0.5 0.15 45); /* Warm ochre */
+  --accent-foreground: oklch(1 0 0); /* White */
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --border: oklch(0.92 0.002 0); /* Very light gray */
+  --input: oklch(0.95 0.002 0);
+  --ring: oklch(0.5 0.15 45); /* Ochre ring */
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.15 0.01 0);
+  --sidebar-accent: oklch(0.5 0.15 45);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.92 0.002 0);
+  --sidebar-ring: oklch(0.5 0.15 45);
 }
 
 .dark {
@@ -119,6 +122,24 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Lato', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    font-family: 'Playfair Display', serif;
+  }
+  h1 {
+    @apply text-5xl md:text-6xl;
+  }
+  h2 {
+    @apply text-4xl md:text-5xl;
+  }
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+  p {
+    @apply leading-relaxed;
+    font-family: 'Lato', sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -135,18 +156,14 @@
 
 @layer components {
   /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
+   * Design System: Sculptural Minimalism
+   * - Monochromatic base (black, white, stone gray)
+   * - Warm ochre accents for CTAs and emphasis
+   * - Serif display font (Playfair Display) for headings
+   * - Clean sans-serif (Lato) for body text
+   * - Generous whitespace and subtle shadows
    */
+
   .container {
     width: 100%;
     margin-left: auto;
@@ -158,6 +175,24 @@
   .flex {
     min-height: 0;
     min-width: 0;
+  }
+
+  /* Elegant divider lines */
+  .divider-elegant {
+    @apply h-px bg-foreground/20 my-12 md:my-16;
+  }
+
+  /* Subtle shadow for gallery cards */
+  .shadow-gallery {
+    @apply shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  /* Warm ochre accent button */
+  .btn-accent {
+    @apply bg-accent text-accent-foreground px-6 py-3 font-medium transition-all duration-300;
+  }
+  .btn-accent:hover {
+    @apply opacity-90;
   }
 
   @media (min-width: 640px) {
