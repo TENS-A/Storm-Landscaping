@@ -3,11 +3,12 @@ import { Mail, Phone, MapPin, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 /**
- * Design System: Sculptural Minimalism
+ * Design System: Sculptural Minimalism with Dark Hero
+ * - Full-bleed hero image with dark overlay
+ * - White text on dark background for hero section
+ * - Transparent navigation bar overlaying hero
  * - Monochromatic palette (black, white, stone gray) with warm ochre accents
  * - Playfair Display serif for headings, Lato sans-serif for body
- * - Generous whitespace, asymmetric layouts, subtle shadows
- * - Gallery-inspired masonry layout for portfolio images
  */
 
 export default function Home() {
@@ -70,55 +71,60 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
-        <div className="container flex items-center justify-between py-4">
-          <div className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-foreground">Storm</div>
-            <div className="text-sm text-muted-foreground">The Art of Landscaping</div>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#services" className="text-sm text-foreground hover:text-accent transition-colors">Services</a>
-            <a href="/gallery" className="text-sm text-foreground hover:text-accent transition-colors">Gallery</a>
-            <a href="/contact" className="text-sm text-foreground hover:text-accent transition-colors">Contact</a>
-          </div>
-          <a href="/contact">
-            <Button className="btn-accent text-sm">Get Quote</Button>
-          </a>
+    <div className="min-h-screen bg-black">
+      {/* Hero Section with Full-Bleed Image */}
+      <section className="relative w-full h-screen overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/storm-landscaping-hero.jpeg"
+            alt="Storm Landscaping - Garden Design"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/40" />
         </div>
-      </nav>
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center min-h-screen">
-          {/* Left: Text Content */}
-          <div className="p-8 md:p-16 flex flex-col justify-center">
-            <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+        {/* Navigation - Transparent */}
+        <nav className="absolute top-0 left-0 right-0 z-50">
+          <div className="container flex items-center justify-between py-6">
+            <div className="flex items-center gap-2">
+              <div className="text-2xl font-bold text-white">Storm</div>
+              <div className="text-sm text-white/80">The Art of Landscaping</div>
+            </div>
+            <div className="hidden md:flex items-center gap-8">
+              <a href="#services" className="text-sm text-white hover:text-amber-300 transition-colors">Services</a>
+              <a href="/gallery" className="text-sm text-white hover:text-amber-300 transition-colors">Gallery</a>
+              <a href="/contact" className="text-sm text-white hover:text-amber-300 transition-colors">Contact</a>
+            </div>
+            <a href="/contact">
+              <Button className="bg-amber-600 hover:bg-amber-700 text-white text-sm">Get Quote</Button>
+            </a>
+          </div>
+        </nav>
+
+        {/* Hero Content - Centered */}
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <div className="text-center text-white px-6 max-w-3xl">
+            <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
               The Art of Landscaping
             </h1>
-            <p className="font-body text-lg text-foreground/80 mb-8 max-w-md leading-relaxed">
+            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
               Bespoke landscaping and building services for domestic and premium residential clients across London, Bedfordshire, and Cambridgeshire.
             </p>
-            <p className="font-body text-base text-foreground/70 mb-12 max-w-md">
+            <p className="text-lg text-white/80 mb-12">
               We combine quality craftsmanship with attention to detail to create outdoor spaces that endure.
             </p>
-            <div className="flex gap-4">
-              <Button className="btn-accent">Request a Quote</Button>
-              <Button variant="outline" className="border-foreground text-foreground hover:bg-foreground/5">
-                View Portfolio
-              </Button>
+            <div className="flex gap-4 justify-center">
+              <a href="/contact">
+                <Button className="bg-amber-600 hover:bg-amber-700 text-white text-base px-8 py-6">Request a Quote</Button>
+              </a>
+              <a href="/gallery">
+                <Button variant="outline" className="border-white text-white hover:bg-white/10 text-base px-8 py-6">
+                  View Portfolio
+                </Button>
+              </a>
             </div>
-          </div>
-
-          {/* Right: Hero Image */}
-          <div className="relative h-full min-h-screen bg-gray-100 overflow-hidden">
-            <img
-              src="/storm-landscaping-hero.jpeg"
-              alt="Storm Landscaping - Garden Design"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white pointer-events-none" />
           </div>
         </div>
       </section>
@@ -127,27 +133,27 @@ export default function Home() {
       <section id="services" className="py-20 md:py-32 bg-white">
         <div className="container">
           <div className="mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Our Services
             </h2>
-            <div className="w-16 h-1 bg-accent" />
+            <div className="w-16 h-1 bg-amber-600" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
               <div
                 key={service.id}
-                className="group cursor-pointer p-8 border border-gray-200 hover:border-accent hover:shadow-lg transition-all duration-300"
+                className="group cursor-pointer p-8 border border-gray-200 hover:border-amber-600 hover:shadow-lg transition-all duration-300"
                 onClick={() => setSelectedService(selectedService === service.id ? null : service.id)}
               >
                 <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="font-display text-xl font-bold text-foreground mb-3">
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
                   {service.name}
                 </h3>
-                <p className="font-body text-sm text-foreground/70 leading-relaxed">
+                <p className="text-sm text-gray-600 leading-relaxed">
                   {service.description}
                 </p>
-                <div className="mt-4 flex items-center text-accent text-sm font-medium group-hover:gap-2 transition-all">
+                <div className="mt-4 flex items-center text-amber-600 text-sm font-medium group-hover:gap-2 transition-all">
                   Learn more <ChevronRight className="w-4 h-4 ml-1" />
                 </div>
               </div>
@@ -160,17 +166,17 @@ export default function Home() {
       <section id="gallery" className="py-20 md:py-32 bg-gray-50">
         <div className="container">
           <div className="mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Recent Projects
             </h2>
-            <div className="w-16 h-1 bg-accent" />
+            <div className="w-16 h-1 bg-amber-600" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {portfolioItems.map((item) => (
               <div
                 key={item.id}
-                className={`group overflow-hidden shadow-gallery hover:shadow-xl transition-all duration-300 ${
+                className={`group overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ${
                   item.aspect === "landscape" ? "md:col-span-2" : ""
                 }`}
               >
@@ -183,10 +189,10 @@ export default function Home() {
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                 </div>
                 <div className="p-6 bg-white">
-                  <h3 className="font-display text-lg font-bold text-foreground mb-2">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">
                     {item.title}
                   </h3>
-                  <p className="font-body text-sm text-foreground/60 flex items-center gap-2">
+                  <p className="text-sm text-gray-600 flex items-center gap-2">
                     <MapPin className="w-4 h-4" />
                     {item.location}
                   </p>
@@ -195,9 +201,9 @@ export default function Home() {
             ))}
           </div>
 
-            <div className="mt-12 text-center">
+          <div className="mt-12 text-center">
             <a href="/gallery">
-              <Button className="btn-accent">View Full Gallery</Button>
+              <Button className="bg-amber-600 hover:bg-amber-700 text-white text-base px-8 py-6">View Full Gallery</Button>
             </a>
           </div>
         </div>
@@ -208,16 +214,16 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-3">20+</div>
-              <p className="font-body text-foreground/70">Years of Experience</p>
+              <div className="text-4xl font-bold text-amber-600 mb-3">20+</div>
+              <p className="text-gray-600">Years of Experience</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-3">500+</div>
-              <p className="font-body text-foreground/70">Projects Completed</p>
+              <div className="text-4xl font-bold text-amber-600 mb-3">500+</div>
+              <p className="text-gray-600">Projects Completed</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-3">100%</div>
-              <p className="font-body text-foreground/70">Client Satisfaction</p>
+              <div className="text-4xl font-bold text-amber-600 mb-3">100%</div>
+              <p className="text-gray-600">Client Satisfaction</p>
             </div>
           </div>
         </div>
@@ -227,105 +233,39 @@ export default function Home() {
       <section id="contact" className="py-20 md:py-32 bg-gray-50">
         <div className="container">
           <div className="max-w-2xl mx-auto">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 text-center">
               Get in Touch
             </h2>
-            <p className="font-body text-lg text-foreground/70 text-center mb-12">
-              Ready to transform your outdoor space? Contact us today for a free consultation and quote.
+            <p className="text-lg text-gray-600 text-center mb-12">
+              Ready to transform your outdoor space? Contact us today for a free consultation.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div className="text-center">
-                <Phone className="w-8 h-8 text-accent mx-auto mb-4" />
-                <p className="font-body font-medium text-foreground mb-2">Phone</p>
-                <p className="font-body text-foreground/70">+44 (0) 123 456 7890</p>
+                <Phone className="w-8 h-8 text-amber-600 mx-auto mb-4" />
+                <p className="text-sm text-gray-600 mb-2">Phone</p>
+                <p className="font-semibold text-gray-900">+44 (0) 123 456 7890</p>
               </div>
               <div className="text-center">
-                <Mail className="w-8 h-8 text-accent mx-auto mb-4" />
-                <p className="font-body font-medium text-foreground mb-2">Email</p>
-                <p className="font-body text-foreground/70">hello@stormlandscaping.co.uk</p>
+                <Mail className="w-8 h-8 text-amber-600 mx-auto mb-4" />
+                <p className="text-sm text-gray-600 mb-2">Email</p>
+                <p className="font-semibold text-gray-900">hello@stormlandscaping.co.uk</p>
               </div>
               <div className="text-center">
-                <MapPin className="w-8 h-8 text-accent mx-auto mb-4" />
-                <p className="font-body font-medium text-foreground mb-2">Service Areas</p>
-                <p className="font-body text-foreground/70">London, Bedfordshire, Cambridgeshire</p>
+                <MapPin className="w-8 h-8 text-amber-600 mx-auto mb-4" />
+                <p className="text-sm text-gray-600 mb-2">Service Areas</p>
+                <p className="font-semibold text-gray-900">London, Bedfordshire, Cambridgeshire</p>
               </div>
             </div>
 
-            <form className="space-y-6 bg-white p-8 border border-gray-200">
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 border border-gray-300 focus:border-accent focus:outline-none transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="w-full px-4 py-3 border border-gray-300 focus:border-accent focus:outline-none transition-colors"
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Message
-                </label>
-                <textarea
-                  rows={5}
-                  className="w-full px-4 py-3 border border-gray-300 focus:border-accent focus:outline-none transition-colors"
-                  placeholder="Tell us about your project..."
-                />
-              </div>
-              <Button className="w-full btn-accent">Send Message</Button>
-            </form>
+            <a href="/contact" className="block">
+              <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white text-base py-6">
+                Send Inquiry
+              </Button>
+            </a>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-foreground text-white py-12">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <h4 className="font-display font-bold mb-4">Storm Landscaping</h4>
-              <p className="font-body text-sm text-white/70">The Art of Landscaping</p>
-            </div>
-            <div>
-              <h5 className="font-body font-medium text-sm mb-4">Services</h5>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-white transition-colors">Patios</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Driveways</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Fencing</a></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-body font-medium text-sm mb-4">Company</h5>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Gallery</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-body font-medium text-sm mb-4">Contact</h5>
-              <p className="font-body text-sm text-white/70">+44 (0) 123 456 7890</p>
-              <p className="font-body text-sm text-white/70">hello@stormlandscaping.co.uk</p>
-            </div>
-          </div>
-          <div className="border-t border-white/20 pt-8 text-center">
-            <p className="font-body text-sm text-white/60">
-              © 2026 Storm Landscaping. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
