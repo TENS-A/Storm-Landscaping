@@ -235,7 +235,9 @@ export default function Gallery() {
           <p className="font-body text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
             Contact us today for a free consultation and quote on your project.
           </p>
-          <Button className="btn-accent">Request a Quote</Button>
+          <a href="/contact">
+            <Button className="btn-accent">Request a Quote</Button>
+          </a>
         </div>
       </section>
 

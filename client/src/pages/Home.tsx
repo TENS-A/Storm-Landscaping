@@ -81,9 +81,11 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8">
             <a href="#services" className="text-sm text-foreground hover:text-accent transition-colors">Services</a>
             <a href="/gallery" className="text-sm text-foreground hover:text-accent transition-colors">Gallery</a>
-            <a href="#contact" className="text-sm text-foreground hover:text-accent transition-colors">Contact</a>
+            <a href="/contact" className="text-sm text-foreground hover:text-accent transition-colors">Contact</a>
           </div>
-          <Button className="btn-accent text-sm">Get Quote</Button>
+          <a href="/contact">
+            <Button className="btn-accent text-sm">Get Quote</Button>
+          </a>
         </div>
       </nav>
 

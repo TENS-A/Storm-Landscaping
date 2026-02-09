@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import Gallery from "./pages/Gallery";
 import LocationLanding from "./pages/LocationLanding";
+import Contact from "./pages/Contact";
 
 
 function Router() {
@@ -14,6 +15,7 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/gallery"} component={Gallery} />
+      <Route path={"/contact"} component={Contact} />
       <Route path={"/london"} component={LocationLanding} />
       <Route path={"/bedfordshire"} component={LocationLanding} />
       <Route path={"/cambridgeshire"} component={LocationLanding} />
