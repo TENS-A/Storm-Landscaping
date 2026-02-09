@@ -12,7 +12,7 @@ import LocationLanding from "./pages/LocationLanding";
 function Router() {
   return (
     <Switch>
-      <Route path={"/ "} component={Home} />
+      <Route path={"/"} component={Home} />
       <Route path={"/gallery"} component={Gallery} />
       <Route path={"/london"} component={LocationLanding} />
       <Route path={"/bedfordshire"} component={LocationLanding} />
