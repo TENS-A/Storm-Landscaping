@@ -64,12 +64,7 @@ export default function Contact() {
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
         <div className="container flex items-center justify-between py-4">
-          <div className="flex items-center gap-2">
-            <div className="text-2xl font-bold text-foreground" style={{ fontFamily: "'Playfair Display', serif" }}>
-              Storm
-            </div>
-            <div className="text-sm text-muted-foreground">The Art of Landscaping</div>
-          </div>
+          <div />
           <div className="hidden md:flex items-center gap-8">
             <a href="/" className="text-sm text-foreground hover:text-accent transition-colors">
               Home
@@ -81,7 +76,9 @@ export default function Contact() {
               Contact
             </a>
           </div>
-          <Button className="btn-accent text-sm">Get Quote</Button>
+          <a href="/contact">
+            <Button className="btn-accent text-sm">Get Quote</Button>
+          </a>
         </div>
       </nav>
 
