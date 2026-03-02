@@ -60,7 +60,9 @@ export default function LocationLanding() {
             <div className="text-2xl font-bold text-foreground">Storm</div>
             <div className="text-sm text-muted-foreground">The Art of Landscaping</div>
           </div>
-          <Button className="btn-accent text-sm">Get Quote</Button>
+          <a href="/contact">
+            <Button className="bg-amber-600 hover:bg-amber-700 text-white text-sm">Get Quote</Button>
+          </a>
         </div>
       </nav>
 
@@ -69,8 +71,8 @@ export default function LocationLanding() {
         <div className="container">
           <div className="max-w-3xl">
             <div className="flex items-center gap-2 mb-6">
-              <MapPin className="w-5 h-5 text-accent" />
-              <span className="font-body text-sm font-medium text-accent">Service Area</span>
+              <MapPin className="w-5 h-5 text-amber-600" />
+              <span className="font-body text-sm font-medium text-amber-600">Service Area</span>
             </div>
             <h1 className="font-display text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
               {data.title}
@@ -78,7 +80,9 @@ export default function LocationLanding() {
             <p className="font-body text-lg text-foreground/70 mb-8 leading-relaxed">
               {data.description}
             </p>
-            <Button className="btn-accent">Request Free Consultation</Button>
+            <a href="/contact">
+              <Button className="bg-amber-600 hover:bg-amber-700 text-white">Request Free Consultation</Button>
+            </a>
           </div>
         </div>
       </section>
@@ -91,8 +95,8 @@ export default function LocationLanding() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.areas.map((area: string, idx: number) => (
-              <div key={idx} className="p-6 border border-gray-200 hover:border-accent hover:shadow-md transition-all">
-                <MapPin className="w-5 h-5 text-accent mb-3" />
+              <div key={idx} className="p-6 border border-gray-200 hover:border-amber-600 hover:shadow-md transition-all">
+                <MapPin className="w-5 h-5 text-amber-600 mb-3" />
                 <h3 className="font-display text-lg font-bold text-foreground">{area}</h3>
               </div>
             ))}
@@ -127,15 +131,15 @@ export default function LocationLanding() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-4">{data.stats.projects}</div>
+              <div className="text-4xl font-bold text-amber-600 mb-4">{data.stats.projects}</div>
               <p className="font-body text-foreground/70">{data.stats.projects} projects completed</p>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-accent mb-4">{data.stats.experience}</div>
+              <div className="text-4xl font-bold text-amber-600 mb-4">{data.stats.experience}</div>
               <p className="font-body text-foreground/70">of professional experience</p>
             </div>
             <div className="text-center">
-              <div className="text-2xl font-bold text-accent mb-4">✓</div>
+              <div className="text-2xl font-bold text-amber-600 mb-4">✓</div>
               <p className="font-body text-foreground/70">{data.stats.clients}</p>
             </div>
           </div>
@@ -184,12 +188,12 @@ export default function LocationLanding() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="text-center">
-              <Phone className="w-8 h-8 text-accent mx-auto mb-4" />
+              <Phone className="w-8 h-8 text-amber-600 mx-auto mb-4" />
               <p className="font-body font-medium text-foreground mb-2">Phone</p>
               <p className="font-body text-foreground/70">+44 (0) 123 456 7890</p>
             </div>
             <div className="text-center">
-              <Mail className="w-8 h-8 text-accent mx-auto mb-4" />
+              <Mail className="w-8 h-8 text-amber-600 mx-auto mb-4" />
               <p className="font-body font-medium text-foreground mb-2">Email</p>
               <p className="font-body text-foreground/70">hello@stormlandscaping.co.uk</p>
             </div>

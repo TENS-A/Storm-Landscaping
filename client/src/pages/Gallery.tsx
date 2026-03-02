@@ -73,9 +73,9 @@ export default function Gallery() {
         <div className="container flex items-center justify-between py-4">
           <div />
           <div className="hidden md:flex items-center gap-8">
-            <a href="/" className="text-sm text-foreground hover:text-accent transition-colors">Home</a>
-            <a href="#gallery" className="text-sm text-foreground hover:text-accent transition-colors">Gallery</a>
-            <a href="/contact" className="text-sm text-foreground hover:text-accent transition-colors">Contact</a>
+            <a href="/" className="text-sm text-foreground hover:text-amber-600 transition-colors">Home</a>
+            <a href="#gallery" className="text-sm text-foreground hover:text-amber-600 transition-colors">Gallery</a>
+            <a href="/contact" className="text-sm text-foreground hover:text-amber-600 transition-colors">Contact</a>
           </div>
           <a href="/contact">
             <Button className="bg-amber-600 hover:bg-amber-700 text-white text-sm">Get Quote</Button>
@@ -85,13 +85,15 @@ export default function Gallery() {
 
       {/* Page Header */}
       <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Portfolio Gallery
-          </h1>
-          <p className="font-body text-lg text-foreground/70 max-w-2xl mx-auto">
-            Explore our recent projects showcasing quality craftsmanship and attention to detail across all service areas.
-          </p>
+        <div className="w-full flex justify-center">
+          <div className="text-center max-w-2xl px-4">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Portfolio Gallery
+            </h1>
+            <p className="font-body text-lg text-foreground/70">
+              Explore our recent projects showcasing quality craftsmanship and attention to detail across all service areas.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -107,7 +109,7 @@ export default function Gallery() {
                 placeholder="Search projects..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 border border-gray-300 focus:border-accent focus:outline-none transition-colors text-foreground placeholder-muted-foreground"
+                className="w-full pl-12 pr-4 py-3 border border-gray-300 focus:border-amber-600 focus:outline-none transition-colors text-foreground placeholder-muted-foreground"
               />
             </div>
           </div>
@@ -227,16 +229,18 @@ export default function Gallery() {
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container text-center">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Ready to Transform Your Space?
-          </h2>
-          <p className="font-body text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
-            Contact us today for a free consultation and quote on your project.
-          </p>
-          <a href="/contact">
-            <Button className="btn-accent">Request a Quote</Button>
-          </a>
+        <div className="w-full flex justify-center">
+          <div className="text-center max-w-2xl px-4">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+              Ready to Transform Your Space?
+            </h2>
+            <p className="font-body text-lg text-foreground/70 mb-8">
+              Contact us today for a free consultation and quote on your project.
+            </p>
+            <a href="/contact">
+              <Button className="bg-amber-600 hover:bg-amber-700 text-white">Request a Quote</Button>
+            </a>
+          </div>
         </div>
       </section>
 

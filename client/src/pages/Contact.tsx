@@ -66,13 +66,13 @@ export default function Contact() {
         <div className="container flex items-center justify-between py-4">
           <div />
           <div className="hidden md:flex items-center gap-8">
-            <a href="/" className="text-sm text-foreground hover:text-accent transition-colors">
+            <a href="/" className="text-sm text-foreground hover:text-amber-600 transition-colors">
               Home
             </a>
-            <a href="/gallery" className="text-sm text-foreground hover:text-accent transition-colors">
+            <a href="/gallery" className="text-sm text-foreground hover:text-amber-600 transition-colors">
               Gallery
             </a>
-            <a href="/contact" className="text-sm text-foreground hover:text-accent transition-colors">
+            <a href="/contact" className="text-sm text-foreground hover:text-amber-600 transition-colors">
               Contact
             </a>
           </div>
@@ -84,13 +84,15 @@ export default function Contact() {
 
       {/* Page Header */}
       <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
-            Get in Touch
-          </h1>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            Have a project in mind? We'd love to hear from you. Contact us today for a free consultation and quote.
-          </p>
+        <div className="w-full flex justify-center">
+          <div className="text-center max-w-2xl px-4">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
+              Get in Touch
+            </h1>
+            <p className="text-lg text-foreground/70">
+              Have a project in mind? We'd love to hear from you. Contact us today for a free consultation and quote.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -99,21 +101,21 @@ export default function Contact() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
             <div>
-              <Phone className="w-8 h-8 text-accent mb-4" />
+              <Phone className="w-8 h-8 text-amber-600 mb-4" />
               <h3 className="text-xl font-bold text-foreground mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Phone
               </h3>
               <p className="text-foreground/70">+44 (0) 123 456 7890</p>
             </div>
             <div>
-              <Mail className="w-8 h-8 text-accent mb-4" />
+              <Mail className="w-8 h-8 text-amber-600 mb-4" />
               <h3 className="text-xl font-bold text-foreground mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Email
               </h3>
               <p className="text-foreground/70">hello@stormlandscaping.co.uk</p>
             </div>
             <div>
-              <MapPin className="w-8 h-8 text-accent mb-4" />
+              <MapPin className="w-8 h-8 text-amber-600 mb-4" />
               <h3 className="text-xl font-bold text-foreground mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
                 Service Areas
               </h3>
@@ -150,7 +152,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 focus:border-accent focus:outline-none transition-colors text-foreground placeholder-muted-foreground"
+                className="w-full px-4 py-3 border border-gray-300 focus:border-amber-600 focus:outline-none transition-colors text-foreground placeholder-muted-foreground"
                 placeholder="Your name"
               />
             </div>
@@ -167,7 +169,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 border border-gray-300 focus:border-accent focus:outline-none transition-colors text-foreground placeholder-muted-foreground"
+                className="w-full px-4 py-3 border border-gray-300 focus:border-amber-600 focus:outline-none transition-colors text-foreground placeholder-muted-foreground"
                 placeholder="your@email.com"
               />
             </div>
@@ -183,7 +185,7 @@ export default function Contact() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 focus:border-accent focus:outline-none transition-colors text-foreground placeholder-muted-foreground"
+                className="w-full px-4 py-3 border border-gray-300 focus:border-amber-600 focus:outline-none transition-colors text-foreground placeholder-muted-foreground"
                 placeholder="+44 (0) 123 456 7890"
               />
             </div>
@@ -223,7 +225,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-4 py-3 border border-gray-300 focus:border-accent focus:outline-none transition-colors text-foreground placeholder-muted-foreground"
+                className="w-full px-4 py-3 border border-gray-300 focus:border-amber-600 focus:outline-none transition-colors text-foreground placeholder-muted-foreground"
                 placeholder="Tell us about your project..."
               />
             </div>
@@ -232,7 +234,7 @@ export default function Contact() {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full btn-accent"
+              className="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 transition-all duration-300"
             >
               {isSubmitting ? "Sending..." : "Request Quote"}
             </Button>
