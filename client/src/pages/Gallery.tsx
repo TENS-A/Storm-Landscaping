@@ -70,27 +70,29 @@ export default function Gallery() {
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
-        <div className="container flex items-center justify-between py-4">
-          <div />
+        <div className="container flex items-center py-4">
+          <div className="flex-1" />
           <div className="hidden md:flex items-center gap-8">
             <a href="/" className="text-sm text-foreground hover:text-amber-600 transition-colors">Home</a>
             <a href="#gallery" className="text-sm text-foreground hover:text-amber-600 transition-colors">Gallery</a>
             <a href="/contact" className="text-sm text-foreground hover:text-amber-600 transition-colors">Contact</a>
           </div>
-          <a href="/contact">
-            <Button className="bg-amber-600 hover:bg-amber-700 text-white text-sm">Get Quote</Button>
-          </a>
+          <div className="flex-1 flex justify-end">
+            <a href="/contact">
+              <Button className="bg-amber-600 hover:bg-amber-700 text-white text-sm">Get Quote</Button>
+            </a>
+          </div>
         </div>
       </nav>
 
       {/* Page Header */}
       <section className="py-16 md:py-24 bg-gray-50">
-        <div className="w-full flex justify-center">
-          <div className="text-center max-w-2xl px-4">
+        <div className="container">
+          <div className="text-center">
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
               Portfolio Gallery
             </h1>
-            <p className="font-body text-lg text-foreground/70">
+            <p className="font-body text-lg text-foreground/70 max-w-2xl mx-auto">
               Explore our recent projects showcasing quality craftsmanship and attention to detail across all service areas.
             </p>
           </div>
@@ -229,12 +231,12 @@ export default function Gallery() {
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-gray-50">
-        <div className="w-full flex justify-center">
-          <div className="text-center max-w-2xl px-4">
+        <div className="container">
+          <div className="text-center">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
               Ready to Transform Your Space?
             </h2>
-            <p className="font-body text-lg text-foreground/70 mb-8">
+            <p className="font-body text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
               Contact us today for a free consultation and quote on your project.
             </p>
             <a href="/contact">

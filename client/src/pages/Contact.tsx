@@ -63,8 +63,8 @@ export default function Contact() {
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
-        <div className="container flex items-center justify-between py-4">
-          <div />
+        <div className="container flex items-center py-4">
+          <div className="flex-1" />
           <div className="hidden md:flex items-center gap-8">
             <a href="/" className="text-sm text-foreground hover:text-amber-600 transition-colors">
               Home
@@ -76,20 +76,22 @@ export default function Contact() {
               Contact
             </a>
           </div>
-          <a href="/contact">
-            <Button className="bg-amber-600 hover:bg-amber-700 text-white text-sm">Get Quote</Button>
-          </a>
+          <div className="flex-1 flex justify-end">
+            <a href="/contact">
+              <Button className="bg-amber-600 hover:bg-amber-700 text-white text-sm">Get Quote</Button>
+            </a>
+          </div>
         </div>
       </nav>
 
       {/* Page Header */}
       <section className="py-16 md:py-24 bg-gray-50">
-        <div className="w-full flex justify-center">
-          <div className="text-center max-w-2xl px-4">
+        <div className="container">
+          <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
               Get in Touch
             </h1>
-            <p className="text-lg text-foreground/70">
+            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
               Have a project in mind? We'd love to hear from you. Contact us today for a free consultation and quote.
             </p>
           </div>
