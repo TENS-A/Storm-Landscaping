@@ -88,10 +88,7 @@ export default function Home() {
         {/* Navigation - Transparent */}
         <nav className="absolute top-0 left-0 right-0 z-50">
           <div className="container flex items-center justify-between py-6">
-            <div className="flex items-center gap-2">
-              <div className="text-2xl font-bold text-white">Storm</div>
-              <div className="text-sm text-white/80">The Art of Landscaping</div>
-            </div>
+            <div />
             <div className="hidden md:flex items-center gap-8">
               <a href="#services" className="text-sm text-white hover:text-amber-300 transition-colors">Services</a>
               <a href="/gallery" className="text-sm text-white hover:text-amber-300 transition-colors">Gallery</a>
@@ -103,13 +100,19 @@ export default function Home() {
           </div>
         </nav>
 
+        {/* Branding - Top Left */}
+        <div className="absolute top-0 left-0 z-20 p-8 md:p-12">
+          <div className="text-white">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-wide mb-2">STORM</h1>
+            <div className="w-24 h-1 bg-white mb-3" />
+            <p className="text-sm md:text-base text-white/90">The Art of Landscaping</p>
+          </div>
+        </div>
+
         {/* Hero Content - Centered */}
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="text-center text-white px-6 max-w-3xl">
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
-              The Art of Landscaping
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
               Bespoke landscaping and building services for domestic and premium residential clients across London, Bedfordshire, and Cambridgeshire.
             </p>
             <p className="text-lg text-white/80 mb-12">
