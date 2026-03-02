@@ -87,16 +87,18 @@ export default function Home() {
 
         {/* Navigation - Transparent */}
         <nav className="absolute top-0 left-0 right-0 z-50">
-          <div className="container flex items-center justify-between py-6">
-            <div />
+          <div className="container flex items-center py-6">
+            <div className="flex-1" />
             <div className="hidden md:flex items-center gap-8">
               <a href="#services" className="text-sm text-white hover:text-amber-300 transition-colors">Services</a>
               <a href="/gallery" className="text-sm text-white hover:text-amber-300 transition-colors">Gallery</a>
               <a href="/contact" className="text-sm text-white hover:text-amber-300 transition-colors">Contact</a>
             </div>
-            <a href="/contact">
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white text-sm">Get Quote</Button>
-            </a>
+            <div className="flex-1 flex justify-end">
+              <a href="/contact">
+                <Button className="bg-amber-600 hover:bg-amber-700 text-white text-sm">Get Quote</Button>
+              </a>
+            </div>
           </div>
         </nav>
 
