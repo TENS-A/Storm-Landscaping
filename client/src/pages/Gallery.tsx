@@ -78,18 +78,18 @@ export default function Gallery() {
             <a href="/contact" className="text-sm text-foreground hover:text-accent transition-colors">Contact</a>
           </div>
           <a href="/contact">
-            <Button className="btn-accent text-sm">Get Quote</Button>
+            <Button className="bg-amber-600 hover:bg-amber-700 text-white text-sm">Get Quote</Button>
           </a>
         </div>
       </nav>
 
       {/* Page Header */}
       <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container">
+        <div className="container text-center">
           <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
             Portfolio Gallery
           </h1>
-          <p className="font-body text-lg text-foreground/70 max-w-2xl">
+          <p className="font-body text-lg text-foreground/70 max-w-2xl mx-auto">
             Explore our recent projects showcasing quality craftsmanship and attention to detail across all service areas.
           </p>
         </div>
