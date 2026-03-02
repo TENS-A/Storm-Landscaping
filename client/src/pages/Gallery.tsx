@@ -88,11 +88,11 @@ export default function Gallery() {
       {/* Page Header */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center">
+          <div>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
               Portfolio Gallery
             </h1>
-            <p className="font-body text-lg text-foreground/70 max-w-2xl mx-auto">
+            <p className="font-body text-lg text-foreground/70 max-w-2xl">
               Explore our recent projects showcasing quality craftsmanship and attention to detail across all service areas.
             </p>
           </div>
@@ -232,11 +232,11 @@ export default function Gallery() {
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center">
+          <div>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
               Ready to Transform Your Space?
             </h2>
-            <p className="font-body text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
+            <p className="font-body text-lg text-foreground/70 mb-8 max-w-2xl">
               Contact us today for a free consultation and quote on your project.
             </p>
             <a href="/contact">

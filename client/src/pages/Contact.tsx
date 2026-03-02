@@ -87,11 +87,11 @@ export default function Contact() {
       {/* Page Header */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center">
+          <div>
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
               Get in Touch
             </h1>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/70 max-w-2xl">
               Have a project in mind? We'd love to hear from you. Contact us today for a free consultation and quote.
             </p>
           </div>
