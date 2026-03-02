@@ -106,10 +106,10 @@ export default function Home() {
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="text-center text-white px-6 max-w-3xl">
             <div className="flex flex-col items-center">
-              <h1 className="text-6xl md:text-7xl font-bold tracking-wider">STORM</h1>
+              <h1 className="text-6xl md:text-7xl font-bold tracking-wider" style={{ fontFamily: "'Playfair Display', serif" }}>STORM</h1>
               <div className="h-1 bg-white mb-2" style={{width: '320px'}} />
             </div>
-            <p className="text-xl md:text-2xl font-light text-white mb-12">The Art of Landscaping</p>
+            <p className="text-xl md:text-2xl font-light text-white mb-12" style={{ fontFamily: "'Playfair Display', serif" }}>The Art of Landscaping</p>
             <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
               Bespoke landscaping and building services for domestic and premium residential clients across London, Bedfordshire, and Cambridgeshire.
             </p>
@@ -167,7 +167,7 @@ export default function Home() {
       <section id="gallery" className="py-20 md:py-32 bg-gray-50">
         <div className="container">
           <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
               Recent Projects
             </h2>
             <div className="w-16 h-1 bg-amber-600" />
@@ -177,11 +177,9 @@ export default function Home() {
             {portfolioItems.map((item) => (
               <div
                 key={item.id}
-                className={`group overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ${
-                  item.aspect === "landscape" ? "md:col-span-2" : ""
-                }`}
+                className="group overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                <div className="relative overflow-hidden bg-gray-200 aspect-square md:aspect-video">
+                <div className="relative overflow-hidden bg-gray-200 aspect-square">
                   <img
                     src={item.image}
                     alt={item.title}
