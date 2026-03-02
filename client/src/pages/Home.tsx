@@ -102,10 +102,10 @@ export default function Home() {
 
 
 
-        {/* Hero Content - Far Left */}
-        <div className="absolute inset-0 flex items-center z-10">
-          <div className="text-white px-6 md:px-12 max-w-2xl">
-            <div className="flex flex-col items-start">
+        {/* Hero Content - Centered */}
+        <div className="absolute inset-0 flex items-center justify-center z-10">
+          <div className="text-center text-white px-6 max-w-3xl">
+            <div className="flex flex-col items-center">
               <h1 className="text-6xl md:text-7xl font-bold tracking-wider">STORM</h1>
               <div className="h-1 bg-white mb-2" style={{width: '320px'}} />
             </div>
@@ -116,7 +116,7 @@ export default function Home() {
             <p className="text-lg text-white/80 mb-12">
               We combine quality craftsmanship with attention to detail to create outdoor spaces that endure.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 justify-center">
               <a href="/contact">
                 <Button className="bg-amber-600 hover:bg-amber-700 text-white text-base px-8 py-6">Request a Quote</Button>
               </a>
