@@ -100,18 +100,13 @@ export default function Home() {
           </div>
         </nav>
 
-        {/* Branding - Top Left */}
-        <div className="absolute top-0 left-0 z-20 p-8 md:p-12">
-          <div className="text-white">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-wide mb-2">STORM</h1>
-            <div className="w-24 h-1 bg-white mb-3" />
-            <p className="text-sm md:text-base text-white/90">The Art of Landscaping</p>
-          </div>
-        </div>
+
 
         {/* Hero Content - Centered */}
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="text-center text-white px-6 max-w-3xl">
+            <h1 className="text-6xl md:text-7xl font-bold tracking-wider mb-4">STORM</h1>
+            <div className="w-32 h-1 bg-white mx-auto mb-8" />
             <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
               Bespoke landscaping and building services for domestic and premium residential clients across London, Bedfordshire, and Cambridgeshire.
             </p>
