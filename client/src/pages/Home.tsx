@@ -105,8 +105,10 @@ export default function Home() {
         {/* Hero Content - Centered */}
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <div className="text-center text-white px-6 max-w-3xl">
-            <h1 className="text-6xl md:text-7xl font-bold tracking-wider">STORM</h1>
-            <div className="h-1 bg-white mb-2" style={{width: '100%'}} />
+            <div className="flex flex-col items-center">
+              <h1 className="text-6xl md:text-7xl font-bold tracking-wider">STORM</h1>
+              <div className="h-1 bg-white mb-2" style={{width: '320px'}} />
+            </div>
             <p className="text-xl md:text-2xl font-light text-white mb-12">The Art of Landscaping</p>
             <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed">
               Bespoke landscaping and building services for domestic and premium residential clients across London, Bedfordshire, and Cambridgeshire.
