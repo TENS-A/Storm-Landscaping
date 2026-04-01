@@ -100,7 +100,7 @@ export default function Home() {
               Professional Landscapers and Horticulturists
             </p>
             <p className="text-lg text-white mb-12" style={{ textShadow: "0 2px 6px rgba(0,0,0,0.6)" }}>
-              Dream, design, deliver.
+              Dream. Design. Deliver.
             </p>
             <div className="flex gap-4 justify-center">
               <a href="/contact">
