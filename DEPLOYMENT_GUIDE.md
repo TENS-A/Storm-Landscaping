@@ -228,6 +228,38 @@ storm_landscaping/
 
 ---
 
+## Critical Netlify Configuration (MUST NOT BE DELETED)
+
+### The netlify.toml File
+
+This file is **ESSENTIAL** for proper Netlify deployment. It must always be present in the root directory:
+
+```toml
+[build]
+  command = "pnpm run build"
+  publish = "dist/public"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```
+
+**CRITICAL POINTS:**
+- `publish = "dist/public"` - Must point to `dist/public`, NOT `dist`
+- The build output structure is: `dist/public/index.html`
+- The redirect rule ensures all routes redirect to index.html for React Router
+- This file must be committed to GitHub and never deleted
+
+### Common Netlify 404 Error
+
+If you see "Page not found" on the live site:
+1. Check that `netlify.toml` exists in the root directory
+2. Verify `publish = "dist/public"` (not `dist`)
+3. Ensure the file is committed and pushed to GitHub
+4. Trigger a new Netlify deploy by pushing a commit
+5. Check Netlify build logs for errors
+
 ## Next Steps
 
 1. **Review the website**: Open the dev server and review all pages
