@@ -1,5 +1,7 @@
+import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { generateLocalBusinessSchema, generateServiceSchema } from "@/lib/schema";
 
 /**
  * Design System: Sculptural Minimalism
@@ -11,6 +13,25 @@ import { Link } from "wouter";
  */
 
 export default function Home() {
+  // Inject schema markup for SEO
+  React.useEffect(() => {
+    // LocalBusiness schema
+    const localBusinessScript = document.createElement('script');
+    localBusinessScript.type = 'application/ld+json';
+    localBusinessScript.textContent = JSON.stringify(generateLocalBusinessSchema());
+    document.head.appendChild(localBusinessScript);
+
+    // Service schema
+    const serviceScript = document.createElement('script');
+    serviceScript.type = 'application/ld+json';
+    serviceScript.textContent = JSON.stringify(generateServiceSchema());
+    document.head.appendChild(serviceScript);
+
+    return () => {
+      document.head.removeChild(localBusinessScript);
+      document.head.removeChild(serviceScript);
+    };
+  }, []);
   const services = [
     { name: "Resin Bound Surfaces", desc: "Durable, permeable resin driveways and patios. Perfect for London, Bedfordshire, and Cambridgeshire properties." },
     { name: "Artificial Grass Specialists", desc: "Low-maintenance artificial turf installation. Year-round green spaces without the upkeep." },
@@ -137,7 +158,7 @@ export default function Home() {
                     {item.title}
                   </h3>
                   <p className="text-gray-600 flex items-center gap-2">
-                    <span>📍</span> {item.location}
+                    <span>•</span> {item.location}
                   </p>
                 </div>
               </div>
