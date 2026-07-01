@@ -33,12 +33,13 @@ export default function Home() {
     };
   }, []);
   const services = [
-    { name: "Resin Bound Surfaces", desc: "Durable, permeable resin driveways and patios. Perfect for London, Bedfordshire, and Cambridgeshire properties." },
-    { name: "Artificial Grass Specialists", desc: "Low-maintenance artificial turf installation. Year-round green spaces without the upkeep." },
-    { name: "Tree Planting & Soft Planting", desc: "Strategic planting design for shade, privacy, and year-round interest. Native and ornamental species." },
-    { name: "Water Courses, Ponds & Lakes", desc: "Bespoke water features and pond construction. Enhance your landscape with professional water design." },
-    { name: "Specialist Stonework", desc: "Precision stonework for walls, features, and hardscaping. Timeless materials, expert craftsmanship." },
-    { name: "Groundwork & Specialists", desc: "Land drainage, retaining walls, and site preparation. Professional groundworks for residential projects." },
+    { name: "Resin Bound Surfaces", desc: "Durable, permeable resin driveways and patios. Perfect for London, Bedfordshire, and Cambridgeshire properties.", slug: "/services/resin-bound-surfaces" },
+    { name: "Artificial Grass Specialists", desc: "Low-maintenance artificial turf installation. Year-round green spaces without the upkeep.", slug: "/services/artificial-grass" },
+    { name: "Tree Planting & Soft Planting", desc: "Strategic planting design for shade, privacy, and year-round interest. Native and ornamental species.", slug: "/services/tree-planting" },
+    { name: "Water Courses, Ponds & Lakes", desc: "Bespoke water features and pond construction. Enhance your landscape with professional water design.", slug: "/services/water-features" },
+    { name: "Specialist Stonework", desc: "Precision stonework for walls, features, and hardscaping. Timeless materials, expert craftsmanship.", slug: "/services/specialist-stonework" },
+    { name: "Groundwork & Specialists", desc: "Land drainage, retaining walls, and site preparation. Professional groundworks for residential projects.", slug: "/services/groundwork" },
+    { name: "Porcelain & Natural Stone Paving", desc: "Premium porcelain and natural stone paving for patios, paths, and outdoor living spaces. Elegant and durable.", slug: "/services/porcelain-paving" },
   ];
 
   const portfolioItems = [
@@ -124,14 +125,17 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
-              <div key={service.name} className="p-8 border border-gray-200 rounded-lg hover:border-amber-600 transition-colors">
-                <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  {service.name}
-                </h3>
-                <p className="text-gray-600">
-                  {service.desc}
-                </p>
-              </div>
+              <Link key={service.name} href={service.slug}>
+                <div className="p-8 border border-gray-200 rounded-lg hover:border-amber-600 hover:shadow-md transition-all cursor-pointer group h-full">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    {service.name}
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    {service.desc}
+                  </p>
+                  <span className="text-amber-600 text-sm font-semibold group-hover:underline">Learn more →</span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
